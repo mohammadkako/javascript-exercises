@@ -11,5 +11,15 @@
  */
 
 // Write your solution here
+let charCount = (name, x) => {
+    let count = 0;
+    for (let i = 0; i < name.length; i++) {
+      if (name[i] === x) count++;
+    }
+    return count;
+  };
+  
+  console.log(charCount("javascript", "a")); 
+  console.log(charCount("javascript", "s")); 
 
 module.exports = charCount;
