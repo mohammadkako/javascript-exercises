@@ -13,8 +13,10 @@
 // Write your solution here
 function isEvenOrOdd(num){
     if(num %2 ==0){
-       return true
-    }else return false
+       return "Even"
+    }else{
+        return "Odd"
+    } 
 }
 console.log((isEvenOrOdd(33)))
 module.exports = isEvenOrOdd;
