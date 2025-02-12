@@ -10,5 +10,10 @@
  * searchArray([1, 2, 3, 4], 3) should return true.
  * searchArray([1, 2, 3, 4], 5) should return false.
  */
+function searchArray(arr,target){
+    return arr.includes(target)
+}
+console.log(searchArray([1, 2, 3, 4], 3)); 
+console.log(searchArray([1, 2, 3, 4], 5));
 
 module.exports = searchArray;
