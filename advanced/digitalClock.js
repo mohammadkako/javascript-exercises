@@ -17,6 +17,22 @@
  * This exercise involves DOM manipulation. Ensure you have an HTML file with a container element
  * (e.g., `<div id="clock"></div>`) to display the clock.
  */
-
+function cal(opp, a, b) {
+    switch (opp) {
+        case "add":
+            return a + b;
+        case "subtract":
+            return a - b;
+        case "multiply":
+            return a * b;
+        case "divide":
+            if (b === 0) {
+                return "write a num";
+            }
+            return a / b;
+        default:
+            return "come on";
+    }
+}
 
 module.exports = digitalClock;
