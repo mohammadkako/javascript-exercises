@@ -12,4 +12,18 @@
  * isPalindrome(10) should return false.
  */
 
+function isPalindrome(num) {
+    // اگر عدد منفی باشد، پالیندروم نیست
+    if (num < 0) {
+      return false;
+    }
+  
+    // تبدیل عدد به رشته برای مقایسه معکوس آن
+    const str = num.toString();
+    const reversedStr = str.split('').reverse().join('');
+  
+    // بررسی اینکه رشته معکوس برابر با رشته اصلی باشد
+    return str === reversedStr;
+  }
+console.log(isPalindrome(121))
 module.exports = isPalindrome;
