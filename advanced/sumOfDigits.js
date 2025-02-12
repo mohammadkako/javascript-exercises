@@ -9,5 +9,9 @@
  * sumOfDigits(123) should return 6 (1 + 2 + 3).
  * sumOfDigits(987) should return 24 (9 + 8 + 7).
  */
+function sumOfDigits(number) {
+    if (number === 0) return 0;
+    return (number % 10) + sumOfDigits(Math.floor(number / 10));
+}
 
 module.exports = sumOfDigits;
