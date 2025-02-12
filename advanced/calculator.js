@@ -27,10 +27,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    if (b === 0) {
-        return "Error: Division by zero is not allowed!";
-    }
-    return a / b;
+    return b === 0 ? NaN : a / b;
 }
 
 
