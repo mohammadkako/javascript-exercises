@@ -14,27 +14,15 @@
  */
 
 // Write your solution here
-function add(a, b) {
-    return a + b;
+function cal(opp, a, b) {
+    const operations = {
+        add: (a, b) => a + b,
+        subtract: (a, b) => a - b,
+        multiply: (a, b) => a * b,
+        divide: (a, b) => (b === 0 ? "write a num" : a / b),
+    };
+    return operations[opp] ? operations[opp](a, b) : "come on";
 }
 
-function subtract(a, b) {
-    return a - b;
-}
-
-function multiply(a, b) {
-    return a * b;
-}
-
-function divide(a, b) {
-    return b === 0 ? NaN : a / b;
-}
-
-
-console.log(add(2, 3));       
-console.log(subtract(5, 2));   
-console.log(divide(10, 2));    
-console.log(divide(10, 0));    
-
-
-module.exports = { add, subtract, multiply, divide };
+console.log(cal("multiply", 4, 5)); // 20
+module.exports = { cal };
