@@ -15,3 +15,4 @@ let celsiusToFahrenheit=(num) => (num *9/5)+32;
 console.log(celsiusToFahrenheit(100))
 
 module.exports = celsiusToFahrenheit;
+
