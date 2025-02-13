@@ -11,14 +11,16 @@
  */
 
 // Write your solution here
-function sumArray (arr){
+function sumArray(array) {
+    if (!Array.isArray(array)) {
+        throw new TypeError("ارایه وارد کنید");
+    }
     let sum = 0;
-    for(let i=0 ; i< arr.length;i++){
-        sum+=arr[i]
+    for (const num of array) {
+        sum += num;
     }
     return sum;
 }
 console.log(sumArray([1, 2, 3])); 
-
 
 module.exports = sumArray;

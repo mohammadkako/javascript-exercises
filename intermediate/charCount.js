@@ -11,15 +11,11 @@
  */
 
 // Write your solution here
-let charCount = (name, x) => {
-    let count = 0;
-    for (let i = 0; i < name.length; i++) {
-      if (name[i] === x) count++;
-    }
-    return count;
-  };
+
+let charCount = (name, x) => name.split("").filter(i => i === x).length;
+
+console.log(charCount("javascript", "a")); 
+console.log(charCount("javascript", "s")); 
   
-  console.log(charCount("javascript", "a")); 
-  console.log(charCount("javascript", "s")); 
 
 module.exports = charCount;

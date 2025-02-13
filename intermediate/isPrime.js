@@ -11,14 +11,15 @@
  */
 
 // Write your solution here
-function isPrime (num){
-    if(num <= 1) return false
-    if(num === 2) return true
-    for(i = 2 ; i<num; i++){
-        if (num % i === 0)
-            return false
+const isPrime = (num) => {
+    if (num <= 1) return false; 
+    if (num === 2) return true; 
+    for (let i = 2; i < num; i++) { 
+        if (num % i === 0) return false; 
     }
-    return true
-}
-console.log(isPrime(5))
+    return true; 
+};
+
+console.log(isPrime(5)); 
+
 module.exports = isPrime;
