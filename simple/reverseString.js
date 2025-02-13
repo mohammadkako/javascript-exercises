@@ -11,9 +11,7 @@
  */
 
 // Write your solution here
-function reverseString (str){
-    return str.split("").reverse().join("");
-}
-console.log(reverseString("hello"))
 
+let reverseString = str => str.split("").reverse().join("");
+console.log(reverseString("hello"))
 module.exports = reverseString;
