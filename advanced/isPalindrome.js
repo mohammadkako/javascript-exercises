@@ -13,15 +13,11 @@
  */
 
 function isPalindrome(num) {
-   
     if (num < 0) {
       return false;
     }
-  
-   
     const str = num.toString();
     const reversedStr = str.split('').reverse().join('');
-  
     return str === reversedStr;
   }
 console.log(isPalindrome(121))
