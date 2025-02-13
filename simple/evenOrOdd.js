@@ -11,12 +11,9 @@
  */
 
 // Write your solution here
-function isEvenOrOdd(num){
-    if(num %2 ==0){
-       return "Even"
-    }else{
-        return "Odd"
-    } 
+function isEvenOrOdd(num) {
+    return num % 2 === 0 ? "Even" : "Odd";
 }
-console.log((isEvenOrOdd(33)))
+
+console.log(isEvenOrOdd(33));
 module.exports = isEvenOrOdd;
