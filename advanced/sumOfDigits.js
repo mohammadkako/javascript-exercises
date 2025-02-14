@@ -11,15 +11,6 @@
  */
 
 function sumOfDigits(x){
-        let y = x+""
-        let numbers = String(y).split("").map(Number)//gptاین لاین با 
-    
-        let sum = 0
-        for (let i = 0; i < numbers.length; i++) {
-          sum += numbers[i]
-        }
-        return sum
+        return x.toString().split("").reduce((prev, curr) => prev + Number(curr), 0);
 }
-
-
 module.exports = sumOfDigits;
