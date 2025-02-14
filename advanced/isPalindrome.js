@@ -12,13 +12,6 @@
  * isPalindrome(10) should return false.
  */
 function isPalindrome(num){
-    
-    const z1 = String(num).split('').map(Number).reverse().join('')
-    if(z1 == num){
-        return true
-    }else{
-        return false
-    }
-
- }
+  return num < 0 ? false : num.toString() === num.toString().split("").reverse().join("");
+}
 module.exports = isPalindrome;
