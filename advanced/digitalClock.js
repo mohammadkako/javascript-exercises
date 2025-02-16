@@ -33,15 +33,10 @@ function digitalClock(){
 
 function getCurrntTime() {
     let date = new Date();
-    let hour = date.getHours();
-    let minute = date.getMinutes();
-    let second = date.getSeconds();
-
-    // Add leading zero if single digit
-    hour = hour < 10 ? '0' + hour : hour;
-    minute = minute < 10 ? '0' + minute : minute;
-    second = second < 10 ? '0' + second : second;
-
+    let hour = date.getHours().toString().padStart(2, "0")
+    let minute = date.getMinutes().toString().padStart(2, "0")
+    let second = date.getSeconds().toString().padStart(2, "0")
+    
     return `${hour}:${minute}:${second}`;
 }
 
