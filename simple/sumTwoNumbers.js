@@ -13,5 +13,4 @@
 // Write your solution here
 
  let sum = (a,b)=> a+b;
- console.log(sum(3,4))
 module.exports = sum;
