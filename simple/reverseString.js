@@ -13,5 +13,4 @@
 // Write your solution here
 
 let reverseString = str => str.split("").reverse().join("");
-console.log(reverseString("hello"))
 module.exports = reverseString;
