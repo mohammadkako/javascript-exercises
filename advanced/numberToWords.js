@@ -37,11 +37,4 @@ function numberToWords(num) {
   
     return words.trim();
   }
-  console.log(numberToWords(123)); 
-  console.log(numberToWords(5)); 
-  console.log(numberToWords(1001)); 
-  console.log(numberToWords(1000000));
-  console.log(numberToWords(987654321)); // "nine hundred eighty seven million six hundred fifty four thousand three hundred twenty one"
-  
-
 module.exports = numberToWords;
