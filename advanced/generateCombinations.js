@@ -10,25 +10,29 @@
  * generateCombinations([1, 2, 3]) should return
  * [ [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3] ].
  */
-function generateCombinations(arr) {
-    const result = [];
+generateCombinations = (array) => array.length === 0 ? array : order(array)
     
-    function helper(index, currentCombination) {
-      if (index === arr.length) {
-        if (currentCombination.length > 0) {
-          result.push(currentCombination);
-        }
-        return;
-      }
-      // شامل کردن عنصر فعلی
-      helper(index + 1, [...currentCombination, arr[index]]);
-      // حذف عنصر فعلی
-      helper(index + 1, currentCombination);
-    }
-  
-    helper(0, []);
-    return result;
-  }
-  console.log(generateCombinations([1,2,3]))
 
+function order(array){
+    if(array.length === 1){
+        return [array]
+    }else{
+        let result = []
+
+
+        for(let i=0 ; i < array.length ; i++){
+            result.push(Array.of(array[i]))
+        } 
+        
+        for (let i = 0; i <= array.length - 2; i++) {
+            for (let j = i + 1; j < array.length; j++) {
+        result.push([array[i], array[j]]);
+        }
+        }
+
+        result.push(array)
+
+        return result
+    }
+}
 module.exports = generateCombinations;
