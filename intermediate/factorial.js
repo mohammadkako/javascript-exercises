@@ -11,13 +11,7 @@
  */
 
 // Write your solution here
-const factorial = (n) => {
-    if (n === 0 || n === 1) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-};
-console.log(factorial(5)); 
+const factorial = (n) => n < 0 ? false : n === 0 || n === 1 ? 1 : n * factorial(n - 1)
 
 module.exports = factorial;
 
