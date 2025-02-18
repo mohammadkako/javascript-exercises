@@ -21,4 +21,14 @@
 
 // i need help for this one
 
+function digitalClock() {
+    let ele = document.getElementById("clock")// المنت اچ تی ام ال رو فرضا سلکت میکنیم
+    let time = new Date() // از زمان حال شی میسازیم
+
+    ele.textContent = time.toLocaleTimeString('en-GB', { hour12: false }) 
+//زمان به صورت 24 ساعت و به شکل دو رقمی و ثانیه:دقیقه:ساعت در صفحه وب و داخل المنت نوشته میشود 
+}
+
+setInterval(digitalClock, 1000)//هر ثانیه زمان بروز میشه
+
 module.exports = digitalClock;
