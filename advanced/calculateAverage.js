@@ -10,13 +10,6 @@
  * calculateAverage([10, 20, 30]) should return 20.
  */
 function calculateAverage(x){
-    if(x.length === 0){
-        return NaN
-    }else{
-        let y = x.reduce(function(total,value){
-            return total + value
-        })
-        return y / x.length
-    }
+      return x.reduce((prev, curr) => prev + curr, 0) / x.length;
 }
 module.exports = calculateAverage;
