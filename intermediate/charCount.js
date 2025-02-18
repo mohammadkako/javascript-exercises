@@ -14,8 +14,4 @@
 
 let charCount = (name, x) => name.split("").filter(i => i === x).length;
 
-console.log(charCount("javascript", "a")); 
-console.log(charCount("javascript", "s")); 
-  
-
 module.exports = charCount;
