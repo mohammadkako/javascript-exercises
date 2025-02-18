@@ -11,16 +11,6 @@
  */
 
 // Write your solution here
-function sumArray(array) {
-    if (!Array.isArray(array)) {
-        throw new TypeError("ارایه وارد کنید");
-    }
-    let sum = 0;
-    for (const num of array) {
-        sum += num;
-    }
-    return sum;
-}
-console.log(sumArray([1, 2, 3])); 
+sumArray = (array) => array.reduce((total,value)=>total += value)
 
 module.exports = sumArray;
