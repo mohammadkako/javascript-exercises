@@ -18,6 +18,4 @@ function findDuplicates(arr) {
     }, {});
     return Object.keys(count).filter(num => count[num] > 1).map(Number);
 }
-
-console.log(findDuplicates([1, 2, 2, 3, 4, 4])); // [2, 4]
 module.exports = findDuplicates;
