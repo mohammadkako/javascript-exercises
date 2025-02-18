@@ -11,9 +11,8 @@
  */
 
 // Write your solution here
-function isEvenOrOdd(num) {
-    return num % 2 === 0 ? "Even" : "Odd";
-}
+isEvenOrOdd = (num) => num % 2 === 0 ? "Even" : "Odd";
+
 //const isEvenOrOddArrow = num => num % 2 === 0 ? "Even" : "Odd";
 console.log(isEvenOrOdd(33));
 module.exports = isEvenOrOdd;
