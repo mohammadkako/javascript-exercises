@@ -11,6 +11,6 @@
  */
 
 // Write your solution here
+const reverseString = str => str.split("").reverse().join("");
 
-reverseString = (x) => Array.from(x).reverse().join("")
 module.exports = reverseString;

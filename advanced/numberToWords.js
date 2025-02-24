@@ -11,56 +11,22 @@
  */
 
 // Write your solution here
-
-
-// تمام لاین ها به جز 36 تا 45 کار gpt :(
-function numberToWords(number) {
-    if (number === 0) {
-      return "zero";
+const numberToWords = num => {
+    if (num === 0) return 'zero';
+    const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    const hundreds = ['', 'one hundred', 'two hundred', 'three hundred', 'four hundred', 'five hundred', 'six hundred', 'seven hundred', 'eight hundred', 'nine hundred'];
+    let word = '';
+    const hundred = Math.floor(num / 100);
+    if (hundred) word += hundreds[hundred] + ' ';
+    num %= 100;
+    if (num >= 20) {
+        word += tens[Math.floor(num / 10)] + ' ';
+        num %= 10;
+    } else if (num >= 10) {
+        return word + teens[num - 10];
     }
-  
-    const units = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-    const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-    const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-    const thousands = ["", "thousand", "million", "billion"];
-  
-    function convertLessThanThousand(num) {
-      if (num === 0) {
-        return "";
-      } else if (num < 10) {
-        return units[num];
-      } else if (num < 20) {
-        return teens[num - 10];
-      } else if(num < 99) {
-        const ten = Math.floor(num / 10);
-        const unit = num % 10;
-        return tens[ten] + " " + units[unit];
-      }else {
-        const hundreds = Math.floor(num / 100);
-        const un = num % 100;
-        const unit = String(un).split("").map(Number)
-        if(unit[0] === 1){
-            return units[hundreds] + " hundred " + teens[unit[1]]
-        }else{
-            return units[hundreds] + " hundred " + tens[unit[0]] + " " + units[unit[1]];
-        }
-      }
-    }
-  
-    let words = "";
-    let i = 0;
-  
-    while (number > 0) {
-      const chunk = number % 1000;
-      if (chunk !== 0) {
-        words = convertLessThanThousand(chunk) + " " + thousands[i] + " " + words;
-      }
-      number = Math.floor(number / 1000);
-      i++;
-    }
-  
-    return words.trim();
-  }
-
-
+    return word + ones[num].trim();
+};
 module.exports = numberToWords;
