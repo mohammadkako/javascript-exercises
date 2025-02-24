@@ -10,10 +10,6 @@
  * sumOfDigits(987) should return 24 (9 + 8 + 7).
  */
 
-function sumOfDigits(input){
-    let numbers = String(input + "").split("").map(Number)
-    return numbers.reduce((total,value)=> total += value)
-}
-
+const sumOfDigits = n => [...String(n)].reduce((s,d)=>s+ +d,0);
 
 module.exports = sumOfDigits;

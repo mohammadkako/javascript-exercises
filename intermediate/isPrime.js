@@ -11,20 +11,6 @@
  */
 
 // Write your solution here
-function isPrime(x){
-    
-    switch(true){
-            
-        case(x === 2 || x === 3):
-            return true;
-            break;
+const isPrime = n => n > 1 && [...Array(Math.floor(Math.sqrt(n) - 1)).keys()].every(i => n % (i + 2) !== 0);
 
-        case(x % 2 === 0 || x % (2+1) === 0 || x === 0 || x === 1):
-            return false;
-            break;
-
-        default:
-            return true;
-    }
-}
 module.exports = isPrime;

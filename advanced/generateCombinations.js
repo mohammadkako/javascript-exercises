@@ -10,30 +10,17 @@
  * generateCombinations([1, 2, 3]) should return
  * [ [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3] ].
  */
-
-generateCombinations = (array) => array.length === 0 ? array : order(array)
-    
-
-function order(array){
-    if(array.length === 1){
-        return [array]
-    }else{
-        let result = []
-
-
-        for(let i=0 ; i < array.length ; i++){
-            result.push(Array.of(array[i]))
-        } 
-        
-        for (let i = 0; i <= array.length - 2; i++) {
-            for (let j = i + 1; j < array.length; j++) {//gptاین لاین با 
-        result.push([array[i], array[j]]);
+const generateCombinations = numbers => {
+    const combinations = [];
+    const generate = (currentCombination, index) => {
+        if (currentCombination.length) combinations.push([...currentCombination]);
+        for (let i = index; i < numbers.length; i++) {
+            currentCombination.push(numbers[i]);
+            generate(currentCombination, i + 1);
+            currentCombination.pop();
         }
-        }
-
-        result.push(array)
-
-        return result
-    }
-}
+    };
+    generate([], 0);
+    return combinations.sort((a, b) => a.length - b.length || a[0] - b[0]);
+};
 module.exports = generateCombinations;
