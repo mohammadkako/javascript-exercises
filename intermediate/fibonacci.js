@@ -12,13 +12,14 @@
 
 // Write your solution here
 
-function fibonacci(num){
-    let x = [0,1]
-    for (let i = 2 ; i < num ; i++){
-        
-        x.push(x[i-2]+x[i-1])
+function fibonacci(num) {
+    if (num <= 0) return []; // اگر عدد نامعتبر بود، آرایه خالی برگردانید
+    if (num === 1) return [0]; // اگر عدد ۱ بود، فقط [0] برگردانید
 
+    let sequence = [0, 1];
+    for (let i = 2; i < num; i++) {
+        sequence.push(sequence[i - 2] + sequence[i - 1]);
     }
-  return x
+    return sequence;
 }
 module.exports = fibonacci;
